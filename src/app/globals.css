@@ -40,39 +40,6 @@
   --card-border-rgb: 131, 134, 135;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-
-    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
-    --secondary-glow: linear-gradient(
-      to bottom right,
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0.3)
-    );
-
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(
-      #ffffff80,
-      #ffffff40,
-      #ffffff30,
-      #ffffff20,
-      #ffffff10,
-      #ffffff10,
-      #ffffff80
-    );
-
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
-  }
-}
-
 * {
   box-sizing: border-box;
   padding: 0;
@@ -87,12 +54,7 @@ body {
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: white;
 }
 
 a {
@@ -139,25 +101,22 @@ a {
      */
     .landxx
     {
-      fill: #c0c0c0;
-      stroke: #000000;
-      /* fill: var(--callout-rgb);
-      stroke: var(--foreground-rgb); */
+      fill: #ededed;
+      stroke: #bdbdbd;
       stroke-width: 1;
       fill-rule: evenodd;
-      cursor: pointer;
     }
     
-    .landxx:hover {
-     fill: red;
-    }
+    /* .landxx:hover {
+     fill: #e3e3e3;
+    } */
     /*
      * Styles for coastlines of islands and continents with no borders on them
      * (all of them should also belong to the class "landxx" - to allow for all land to be modified at once by refining "landxx" style's definition further down)
      */
     .coastxx
     {
-      stroke-width: 0.5;
+      stroke-width: 1;
     }
     
     
@@ -166,26 +125,26 @@ a {
      *
      * Change opacity to 0 to hide all territories
      */
-    /* .antxx
+    .antxx
     {
       opacity: 1;
-      fill: ${theme.map.normal.default};
-      stroke: ${theme.map.border};
+      /* fill: ${theme.map.normal.default}; */
+      /* stroke: ${theme.map.border}; */
       stroke-width: 1;
-    } */
+    }
     
     /*
      * Circles around small countries without permanent population
      *
      * Change opacity to 1 to display all circles
      */
-    /* .noxx
+    .noxx
     {
-      opacity: 1;
-      fill: ${theme.map.normal.default};
-      stroke: ${theme.map.border};
+      opacity: 0;
+      /* fill: ${theme.map.normal.default};
+      stroke: ${theme.map.border}; */
       stroke-width: 1;
-    } */
+    }
     
     
     /*
