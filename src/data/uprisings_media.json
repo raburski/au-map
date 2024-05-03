@@ -269,12 +269,6 @@
         "countries": ["br"]
     },
     {
-        "title": "arquiteturatradicional.org",
-        "type": "website",
-        "url": "https://www.arquiteturatradicional.org/",
-        "countries": ["br", "pt"]
-    },
-    {
         "title": "Arquitetura Tradicional e Urbanismo Portugal",
         "type": "fb_group",
         "url": "https://www.facebook.com/groups/arqtup/",
@@ -285,6 +279,12 @@
         "type": "instagram",
         "url": "https://www.instagram.com/arquiteturatradicionalportugal",
         "countries": ["pt"]
+    },
+    {
+        "title": "arquiteturatradicional.org",
+        "type": "website",
+        "url": "https://www.arquiteturatradicional.org/",
+        "countries": ["br", "pt"]
     },
 
     {
@@ -299,13 +299,6 @@
         "type": "fb_group",
         "url": "https://www.facebook.com/groups/20009592956",
         "countries": ["lu"]
-    },
-
-    {
-        "title": "architecture_uprising_ua",
-        "type": "instagram",
-        "url": "https://www.instagram.com/architecture_uprising_ua/",
-        "countries": ["ua"]
     },
 
     {
@@ -374,13 +367,6 @@
         "type": "instagram",
         "url": "https://www.instagram.com/arch_aus/",
         "countries": ["au"]
-    },
-
-    {
-        "title": "au_ireland",
-        "type": "instagram",
-        "url": "https://www.instagram.com/au_ireland/",
-        "countries": ["ie"]
     },
 
     {

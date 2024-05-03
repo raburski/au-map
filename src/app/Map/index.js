@@ -40,7 +40,6 @@ function getCountryFill(uprisingLevel) {
 
 export default function Map({ onCountryClick }) {
     const listeners = useRef([])
-    const allCountryCodes = countryFlagEmoji.countryCodes
     const uprisingCountryCodes = useUprisingCountryCodes()
 
     const countryStyles = uprisingCountryCodes.map(cc => {
@@ -58,7 +57,7 @@ export default function Map({ onCountryClick }) {
         listeners.current.forEach(({ cc, listener }) => 
             document.querySelector(`#worldmap #${cc.toLowerCase()}`).removeEventListener('click', listener)
         )
-        listeners.current = allCountryCodes.map(cc => {
+        listeners.current = uprisingCountryCodes.map(cc => {
             const selector = `#worldmap #${cc.toLowerCase()}`
             const onClick = () => onCountryClick(cc)
             const element = document.querySelector(selector)

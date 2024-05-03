@@ -1,19 +1,24 @@
 "use client"
 import Image from "next/image";
-import { useRouter } from 'next/router'
 import styles from "./page.module.css";
 import Map from "./Map";
 import { useState } from "react";
 import Modal from "./Modal";
 import uprisingMedia from '@/data/uprisings_media.json'
 
+function getCountryFromURL() {
+  const element = window ? `${window.location}`.split('#') : []
+  return element[1] ? element[1].replace('country=', '') : undefined
+}
+
 export default function Home() {
-  // const router = useRouter()
-  const [selectedCountry, setSelectedCountry] = useState()
+  const [selectedCountry, setSelectedCountry] = useState(getCountryFromURL())
   const onCountryClick = cc => {
     setSelectedCountry(cc)
-    // router.push(`?cc=${cc}`)
+    window.location = `/#country=${cc}`
   }
+
+  const onClickAway = () => setSelectedCountry(undefined)
 
   const selectedCountryMedia = selectedCountry ? uprisingMedia.filter(m => m.countries.includes(selectedCountry.toLowerCase())) : []
 
@@ -22,7 +27,7 @@ export default function Home() {
       <div className={styles.mapContainer}>
         <Map onCountryClick={onCountryClick}/>
       </div>
-      <Modal countryCode={selectedCountry} media={selectedCountryMedia}/>
+      <Modal countryCode={selectedCountry} media={selectedCountryMedia} onClickAway={onClickAway}/>
     </main>
   );
 }
