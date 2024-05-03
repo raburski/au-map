@@ -30,9 +30,9 @@ function MediaRow({ media }) {
 }
 
 export default function Modal({ countryCode, media}) {
-    const country = countryFlagEmoji.get(countryCode)
+    if (!countryCode) return null
 
-    console.log('country', media)
+    const country = countryFlagEmoji.get(countryCode)
 
     return (
         <div id="country" className={styles.overlay}>
