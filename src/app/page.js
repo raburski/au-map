@@ -1,5 +1,4 @@
 "use client"
-import Image from "next/image";
 import styles from "./page.module.css";
 import Map from "./Map";
 import { useState } from "react";
@@ -7,7 +6,7 @@ import Modal from "./Modal";
 import uprisingMedia from '@/data/uprisings_media.json'
 
 function getCountryFromURL() {
-  const element = window ? `${window.location}`.split('#') : []
+  const element = typeof window !== "undefined" ? `${window.location}`.split('#') : []
   return element[1] ? element[1].replace('country=', '') : undefined
 }
 
@@ -15,9 +14,7 @@ export default function Home() {
   const [selectedCountry, setSelectedCountry] = useState(getCountryFromURL())
   const onCountryClick = cc => {
     setSelectedCountry(cc)
-    if (window) {
-      window.location = `/#country=${cc}`
-    }
+    window.location = `/#country=${cc}`
   }
 
   const onClickAway = () => setSelectedCountry(undefined)
