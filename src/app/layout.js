@@ -9,7 +9,7 @@ export const metadata = {
   title: "Architectural Uprising Map",
 }
 
-const allImages = uprisingMedia.flatMap(media => media.countries).filter(onlyUnique).map(cc => `/emblems/${cc}.jpeg`)
+const allImages = uprisingMedia.flatMap(media => media.countries).filter(onlyUnique).map(cc => `/_next/image?url=%2Femblems%2F${cc}.jpeg&w=256&q=75`)
 
 export default function RootLayout({ children }) {
   return (
