@@ -15,7 +15,9 @@ export default function Home() {
   const [selectedCountry, setSelectedCountry] = useState(getCountryFromURL())
   const onCountryClick = cc => {
     setSelectedCountry(cc)
-    window.location = `/#country=${cc}`
+    if (window) {
+      window.location = `/#country=${cc}`
+    }
   }
 
   const onClickAway = () => setSelectedCountry(undefined)

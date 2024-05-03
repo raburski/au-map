@@ -37,10 +37,11 @@ export default function Modal({ countryCode, media = [], onClickAway }) {
     const [_media, _setMedia] = useState(media)
     useEffect(() => {
         if (!countryCode) {
-            setTimeout(() => {
+            const timerId = setTimeout(() => {
                 _setCountryCode(undefined)
                 _setMedia([])
             }, 500)
+            return () => clearTimeout(timerId)
         } else {
             _setCountryCode(countryCode)
             _setMedia(media)
