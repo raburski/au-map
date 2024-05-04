@@ -105,6 +105,12 @@ a {
       stroke: #ffffff;
       stroke-width: 1;
       fill-rule: evenodd;
+      @media only screen and (max-width: 800px) {
+          stroke-width: 3;
+      }
+      @media only screen and (min-width: 800px) and (max-width: 1200px) {
+          stroke-width: 2;
+      }
     }
     
     /* .landxx:hover {

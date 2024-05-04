@@ -211,4 +211,15 @@
   align-self: stretch;
   max-height: 100vh;
   align-items: center;
+  margin-left: -40px;
+
+  @media only screen and (max-width: 800px) {
+    margin-left: -100px;
+    margin-right: -80px;
+  }
+  @media only screen and (min-width: 800px) and (max-width: 1200px) {
+    margin-left: -80px;
+    margin-right: -80px;
+  }
+
 }
