@@ -174,3 +174,7 @@ a {
       stroke: #000000;
       stroke-width: 0.3;
     }
+
+    .selectedCountry {
+      opacity: 0.5;
+    }

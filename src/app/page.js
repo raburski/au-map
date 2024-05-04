@@ -24,7 +24,7 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <div className={styles.mapContainer}>
-        <Map onCountryClick={onCountryClick}/>
+        <Map onCountryClick={onCountryClick} selectedCountryCode={selectedCountry}/>
       </div>
       <Modal countryCode={selectedCountry} media={selectedCountryMedia} onClickAway={onClickAway}/>
     </main>

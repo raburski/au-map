@@ -38,8 +38,9 @@ function getCountryFill(uprisingLevel) {
     }
 }
 
-export default function Map({ onCountryClick }) {
+export default function Map({ onCountryClick, selectedCountryCode }) {
     const listeners = useRef([])
+    const selectedCountry = useRef()
     const uprisingCountryCodes = useUprisingCountryCodes()
 
     const countryStyles = uprisingCountryCodes.map(cc => {
@@ -68,6 +69,18 @@ export default function Map({ onCountryClick }) {
             }
         }).filter(Boolean)
     }, [onCountryClick])
+
+    useEffect(() => {
+        if (selectedCountry.current) {
+            selectedCountry.current.classList.remove('selectedCountry')
+        }
+
+        selectedCountry.current = document.querySelector(`#worldmap #${selectedCountryCode}`)
+        if (selectedCountry.current) {
+            selectedCountry.current.classList.add('selectedCountry')
+        }
+
+    }, [selectedCountryCode])
 
     return (
         <>
