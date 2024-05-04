@@ -58,10 +58,10 @@ export default function Modal({ countryCode, media = [], onClickAway }) {
         <div id="modal" className={className}>
             <a className={styles.goBack} href="/#" onClick={onClickAway}/>
             <div className={styles.popup}>
-                <Image src={`/emblems/${_countryCode}.jpeg`} width={128} height={128} className={styles.emblem}/>
+                {_countryCode ? <Image src={`/emblems/${_countryCode}.jpeg`} alt={`AU ${country.name} emblem`} width={128} height={128} className={styles.emblem}/> : null}
                 <div class={styles.content}>
                     <h2>{country.name}</h2>
-                    {_media.map(m => <MediaRow media={m}/>)}
+                    {_media.map((m, i) => <MediaRow key={`${_countryCode} ${i}`} media={m}/>)}
                 </div>
             </div>
         </div>
