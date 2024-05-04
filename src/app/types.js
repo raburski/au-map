@@ -5,6 +5,7 @@ export const MEDIA_TYPE = {
     WEBSITE: 'website',
     EMBLEM: 'emblem',
     TWITTER: 'twitter',
+    DISCORD: 'discord',
 }
 
 export const UPRISING_LEVEL = {

@@ -30,7 +30,7 @@ function getCountryFill(uprisingLevel) {
         case UPRISING_LEVEL.FULL:
             return '#038d31'
         case UPRISING_LEVEL.INVOLVE:
-            return '#0ba13d'
+            return '#0dba47'
         case UPRISING_LEVEL.BROADCAST:
             return '#1ac955'
         case UPRISING_LEVEL.INFORM:
@@ -74,12 +74,10 @@ export default function Map({ onCountryClick, selectedCountryCode }) {
         if (selectedCountry.current) {
             selectedCountry.current.classList.remove('selectedCountry')
         }
-
         selectedCountry.current = document.querySelector(`#worldmap #${selectedCountryCode}`)
         if (selectedCountry.current) {
             selectedCountry.current.classList.add('selectedCountry')
         }
-
     }, [selectedCountryCode])
 
     return (

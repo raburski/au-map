@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image"
 import styles from "./modal.module.css"
-import { FaExternalLinkSquareAlt, FaFacebook, FaFacebookSquare, FaInstagram, FaTwitter } from "react-icons/fa";
+import { FaDiscord, FaExternalLinkSquareAlt, FaFacebook, FaFacebookSquare, FaInstagram, FaTwitter } from "react-icons/fa";
 import countryFlagEmoji from "country-flag-emoji"
 import { MEDIA_TYPE } from "../types";
 import { useEffect, useState } from "react";
@@ -18,6 +18,8 @@ function getMediaTypeIcon(type) {
             return <FaExternalLinkSquareAlt />
         case MEDIA_TYPE.TWITTER:
             return <FaTwitter />
+        case MEDIA_TYPE.DISCORD:
+            return <FaDiscord />
         default:
             return null
     }
