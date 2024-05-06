@@ -46,12 +46,11 @@ export default function Map({ onCountryClick, selectedCountryCode }) {
     const countryStyles = uprisingCountryCodes.map(cc => {
         const level = getUprisingLevel(uprisingMedia, cc)
         const fill = getCountryFill(level)
-        return `
-            #worldmap #${cc.toLowerCase()} { fill: ${fill}; cursor: pointer; }
-            #worldmap #${cc.toLowerCase()}:hover { opacity: 0.85; }
-            #worldmap #${cc.toLowerCase()} path { fill: ${fill}; cursor: pointer; }
-            #worldmap #${cc.toLowerCase()} path:hover { opacity: 0.85; }
-        `
+        return `#worldmap #${cc.toLowerCase()} { fill: ${fill}; cursor: pointer; }
+#worldmap #${cc.toLowerCase()}:hover { opacity: 0.85; }
+#worldmap #${cc.toLowerCase()} path { fill: ${fill}; cursor: pointer; }
+#worldmap #${cc.toLowerCase()} path:hover { opacity: 0.85; }
+`
     }).join('')
 
     useEffect(() => {
