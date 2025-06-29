@@ -93,7 +93,6 @@
 .viewContainer {
 	position: relative;
 	width: 100%;
-	min-height: 200px;
 	transition: height 0.3s ease-in-out;
 }
 

@@ -13,6 +13,7 @@ export default function ModalHeader({ countryCode }) {
 				width={144} 
 				height={144} 
 				className={styles.modalEmblem}
+				unoptimized
 			/>
 			<h2 className={styles.modalCountryName}>
 				<span className={styles.countryEmoji}>{country.emoji}</span>

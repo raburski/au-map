@@ -14,13 +14,11 @@ export default function LocalBranchesPanel({ local, onNavigateToLocal }) {
 						width={42} 
 						height={42} 
 						className={styles.panelEmblem}
+						unoptimized
 					/>
 				))}
 				<FaChevronRight className={styles.chevron} />
 			</div>
-			{/* <div className={styles.panelHeader}> */}
-				
-			{/* </div> */}
 			<p className={styles.panelSubtitle}>Local branches and communities</p>
 		</div>
 	)

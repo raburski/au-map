@@ -51,6 +51,7 @@ function LocalBranch({ branch }) {
 					width={48} 
 					height={48} 
 					className={styles.cityEmblem}
+					unoptimized
 				/>
 				<span className={styles.cityName}>{branch.city}</span>
 			</div>
