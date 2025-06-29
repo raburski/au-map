@@ -1,0 +1,15 @@
+{
+    "country": "au",
+    "media": [
+        {
+            "title": "Architectural Uprising Australia AU_AUS",
+            "type": "fb_group",
+            "url": "https://www.facebook.com/groups/architecturaluprisingaustralia"
+        },
+        {
+            "title": "arch_aus",
+            "type": "instagram",
+            "url": "https://www.instagram.com/arch_aus/"
+        }
+    ]
+}

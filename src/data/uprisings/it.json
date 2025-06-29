@@ -1,0 +1,25 @@
+{
+    "country": "it",
+    "media": [
+        {
+            "title": "Architettura in Rivolta",
+            "type": "fb_group",
+            "url": "https://www.facebook.com/groups/architetturarivolta/"
+        },
+        {
+            "title": "Architettura in Rivolta",
+            "type": "fb_page",
+            "url": "https://www.facebook.com/ArchitetturaRivolta"
+        },
+        {
+            "title": "architetturainrivolta",
+            "type": "instagram",
+            "url": "https://instagram.com/architetturainrivolta"
+        },
+        {
+            "title": "ArchInRivolta",
+            "type": "twitter",
+            "url": "https://twitter.com/ArchInRivolta"
+        }
+    ]
+}

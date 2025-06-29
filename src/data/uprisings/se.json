@@ -1,0 +1,25 @@
+{
+    "country": "se",
+    "media": [
+        {
+            "title": "Arkitekturupproret – Det finns alternativ till fyrkantiga lådor",
+            "type": "fb_group",
+            "url": "https://www.facebook.com/groups/Arkitekturupproret"
+        },
+        {
+            "title": "Arkitekturupproret Sverige",
+            "type": "fb_page",
+            "url": "https://www.facebook.com/arkitekturupproret"
+        },
+        {
+            "title": "arkitekturuppror",
+            "type": "instagram",
+            "url": "https://www.instagram.com/arkitekturuppror/"
+        },
+        {
+            "title": "arkitekturupproret.se",
+            "type": "website",
+            "url": "https://www.arkitekturupproret.se/"
+        }
+    ]
+}

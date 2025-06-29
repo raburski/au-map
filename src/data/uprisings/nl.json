@@ -1,0 +1,25 @@
+{
+    "country": "nl",
+    "media": [
+        {
+            "title": "ArchitectuurOmslag Nederland",
+            "type": "fb_group",
+            "url": "https://www.facebook.com/groups/architectuuromslag"
+        },
+        {
+            "title": "ArchitectuurOmslag",
+            "type": "fb_page",
+            "url": "https://www.facebook.com/architectuuromslag"
+        },
+        {
+            "title": "architectuuromslag",
+            "type": "instagram",
+            "url": "https://www.instagram.com/architectuuromslag/"
+        },
+        {
+            "title": "Discord",
+            "type": "discord",
+            "url": "https://discord.gg/rNsr4Epv"
+        }
+    ]
+}

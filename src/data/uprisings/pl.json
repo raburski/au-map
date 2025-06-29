@@ -1,0 +1,54 @@
+{
+    "country": "pl",
+    "media": [
+        {
+            "title": "Architektoniczna Rewolta",
+            "type": "fb_group",
+            "url": "https://www.facebook.com/groups/architektonicznarewolta"
+        },
+        {
+            "title": "Architektoniczna Rewolta Polska",
+            "type": "fb_page",
+            "url": "https://www.facebook.com/ArchitektonicznaRewoltaPolska"
+        },
+        {
+            "title": "architektoniczna.rewolta",
+            "type": "instagram",
+            "url": "https://www.instagram.com/architektoniczna.rewolta/"
+        },
+        {
+            "title": "rewolta.org",
+            "type": "website",
+            "url": "https://rewolta.org/"
+        }
+    ],
+    "local": [
+        {
+            "city": "Wrocław",
+            "cityCode": "wroclaw",
+            "media": [
+                {
+                    "title": "archi.rewolta.wroclaw",
+                    "type": "instagram",
+                    "url": "https://www.instagram.com/archi.rewolta.wroclaw/"
+                },
+                {
+                    "title": "ArchitektonicznaRewoltaWroclaw",
+                    "type": "fb_page",
+                    "url": "https://www.facebook.com/ArchitektonicznaRewoltaWroclaw"
+                }
+            ]
+        },
+        {
+            "city": "Szczecin",
+            "cityCode": "szczecin",
+            "media": [
+                {
+                    "title": "stettin_au",
+                    "type": "instagram",
+                    "url": "https://www.instagram.com/stettin_au/"
+                }
+            ]
+        }
+    ]
+}

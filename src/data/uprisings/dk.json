@@ -1,0 +1,25 @@
+{
+    "country": "dk",
+    "media": [
+        {
+            "title": "Arkitekturoprøret – Lad os bygge smukt igen ",
+            "type": "fb_group",
+            "url": "https://www.facebook.com/groups/ArkitekturoproretDanmark"
+        },
+        {
+            "title": "Arkitekturoprøret Danmark",
+            "type": "fb_page",
+            "url": "https://www.facebook.com/Arkitekturoproret"
+        },
+        {
+            "title": "arkitekturoproret",
+            "type": "instagram",
+            "url": "https://www.instagram.com/arkitekturoproret/"
+        },
+        {
+            "title": "arkitekturoproeret.dk",
+            "type": "website",
+            "url": "https://www.arkitekturoproeret.dk/"
+        }
+    ]
+}

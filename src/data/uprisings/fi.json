@@ -1,0 +1,25 @@
+{
+    "country": "fi",
+    "media": [
+        {
+            "title": "Arkkitehtuurikapina – ei enää rumia laatikoita",
+            "type": "fb_group",
+            "url": "https://www.facebook.com/groups/Arkkitehtuurikapina/"
+        },
+        {
+            "title": "Arkkitehtuuri",
+            "type": "fb_page",
+            "url": "https://www.facebook.com/Arkkitehtuurikapina"
+        },
+        {
+            "title": "arkkitehtuurikapina",
+            "type": "instagram",
+            "url": "https://www.instagram.com/arkkitehtuurikapina/"
+        },
+        {
+            "title": "Intbau Finland",
+            "type": "website",
+            "url": "http://www.intbaufinland.org/"
+        }
+    ]
+}

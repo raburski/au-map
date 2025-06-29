@@ -1,0 +1,20 @@
+{
+    "country": "pt",
+    "media": [
+        {
+            "title": "Arquitetura Tradicional e Urbanismo Portugal",
+            "type": "fb_group",
+            "url": "https://www.facebook.com/groups/arqtup/"
+        },
+        {
+            "title": "arquiteturatradicionalportugal",
+            "type": "instagram",
+            "url": "https://www.instagram.com/arquiteturatradicionalportugal"
+        },
+        {
+            "title": "arquiteturatradicional.org",
+            "type": "website",
+            "url": "https://www.arquiteturatradicional.org/"
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "country": "no",
+    "media": [
+        {
+            "title": "Arkitekturopprøret Norge",
+            "type": "fb_group",
+            "url": "https://www.facebook.com/groups/ArkitekturopproretNorge"
+        },
+        {
+            "title": "aonorge",
+            "type": "instagram",
+            "url": "https://www.instagram.com/aonorge/"
+        },
+        {
+            "title": "arkitekturopproret.no",
+            "type": "website",
+            "url": "https://arkitekturopproret.no/"
+        }
+    ]
+}

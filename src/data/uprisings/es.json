@@ -1,0 +1,20 @@
+{
+    "country": "es",
+    "media": [
+        {
+            "title": "Revuelta Arquitectónica Hispana",
+            "type": "fb_group",
+            "url": "https://www.facebook.com/groups/revueltaarquitectonicahispana"
+        },
+        {
+            "title": "Revuelta Arquitectónica Hispana",
+            "type": "fb_page",
+            "url": "https://www.facebook.com/RevueltaArquitectonicaHispana"
+        },
+        {
+            "title": "motin_arquitectonico",
+            "type": "instagram",
+            "url": "https://www.instagram.com/motin_arquitectonico/"
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+{
+    "country": "fr",
+    "media": [
+        {
+            "title": "Rébellion Architecturale Francophone",
+            "type": "fb_group",
+            "url": "https://www.facebook.com/groups/rebellionarchitecturale"
+        },
+        {
+            "title": "Rébellion Architecturale – Reconstruisons du Beau",
+            "type": "fb_page",
+            "url": "https://www.facebook.com/RebellionArchitecturale"
+        },
+        {
+            "title": "archuprising_france",
+            "type": "instagram",
+            "url": "https://www.instagram.com/archuprising_france/"
+        }
+    ]
+}

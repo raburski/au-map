@@ -38,6 +38,42 @@
   --callout-border-rgb: 172, 175, 176;
   --card-rgb: 180, 185, 188;
   --card-border-rgb: 131, 134, 135;
+
+  /* Modal Design System Variables */
+  --border-color-light: #d9d9d9;
+  
+  --bg-color-white: #ffffff;
+  --bg-color-light: #f9fafb;
+  --bg-color-hover: #f6f6f6;
+  
+  --text-color-primary: #1a1a1a;
+  --text-color-secondary: #374151;
+  --text-color-muted: #6b7280;
+  
+  --shadow-color-light: rgba(0, 0, 0, 0.06);
+  --shadow-color-medium: rgba(0, 0, 0, 0.08);
+  --shadow-color-heavy: rgba(0, 0, 0, 0.15);
+  
+  --border-radius-small: 6px;
+  --border-radius-medium: 8px;
+  --border-radius-large: 12px;
+  --border-radius-xl: 16px;
+  
+  --gap-small: 8px;
+  --gap-medium: 12px;
+  --gap-large: 16px;
+  --gap-xl: 20px;
+  --gap-2xl: 24px;
+  
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.3s ease-in-out;
+
+  /* Social Media Brand Colors */
+  --social-facebook: #1877f2;
+  --social-instagram: #e4405f;
+  --social-twitter: #1da1f2;
+  --social-discord: #5865f2;
+  --social-telegram: #0088cc;
 }
 
 * {

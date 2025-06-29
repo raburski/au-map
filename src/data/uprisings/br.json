@@ -1,0 +1,25 @@
+{
+    "country": "br",
+    "media": [
+        {
+            "title": "Alvorada Arquitetônica",
+            "type": "fb_page",
+            "url": "https://www.facebook.com/RevoltaArquitetonica/"
+        },
+        {
+            "title": "Alvorada Arquitetônica – Alva",
+            "type": "fb_group",
+            "url": "https://www.facebook.com/groups/ArqTradBrasil/"
+        },
+        {
+            "title": "alvoradaarquitetonica",
+            "type": "instagram",
+            "url": "https://instagram.com/alvoradaarquitetonica"
+        },
+        {
+            "title": "arquiteturatradicional.org",
+            "type": "website",
+            "url": "https://www.arquiteturatradicional.org/"
+        }
+    ]
+}

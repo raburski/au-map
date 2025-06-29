@@ -1,0 +1,20 @@
+{
+    "country": "is",
+    "media": [
+        {
+            "title": "Arkitektúruppreisnin á Íslandi – Byggjum fallegt aftur",
+            "type": "fb_group",
+            "url": "https://www.facebook.com/groups/arkitekturuppreisnin/"
+        },
+        {
+            "title": "Arkitektúruppreisnin á Íslandi",
+            "type": "fb_page",
+            "url": "https://www.facebook.com/Arkitekturuppreisnin/"
+        },
+        {
+            "title": "arkitekturuppreisnin",
+            "type": "instagram",
+            "url": "https://www.instagram.com/arkitekturuppreisnin/"
+        }
+    ]
+}

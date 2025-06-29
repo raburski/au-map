@@ -1,0 +1,15 @@
+{
+    "country": "me",
+    "media": [
+        {
+            "title": "Arhitektonska Pobuna",
+            "type": "fb_page",
+            "url": "https://www.facebook.com/ArhitektonskaPobuna"
+        },
+        {
+            "title": "arhitektskapobuna_mne",
+            "type": "instagram",
+            "url": "https://www.instagram.com/arhitektskapobuna_mne/"
+        }
+    ]
+}
