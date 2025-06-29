@@ -61,7 +61,7 @@ export default function Map({ onCountryClick, selectedCountryCode }) {
 		)
 		listeners.current = Object.keys(uprisingCountriesData).map(cc => {
 			const selector = `#worldmap #${cc.toLowerCase()}`
-			const onClick = () => onCountryClick(cc.toUpperCase())
+			const onClick = () => onCountryClick(cc.toLowerCase())
 			const element = document.querySelector(selector)
 			if (element) {
 				return { cc, listener: document.querySelector(selector).addEventListener('click', onClick) }

@@ -15,20 +15,8 @@ export default function ModalWrapper() {
 	const countryCode = countryMatch ? countryMatch[1].toLowerCase() : undefined
 	const isLocal = pathname.includes('/local')
 
-	// Debug logging
-	console.log('ModalWrapper render:', {
-		pathname,
-		countryCode,
-		isLocal,
-		hasCountryData: !!countryData,
-		isLocalView
-	})
-
 	useEffect(() => {
-		console.log('ModalWrapper effect triggered:', { countryCode, isLocal })
-		
 		if (!countryCode) {
-			console.log('No countryCode - clearing data')
 			setCountryData(null)
 			setIsLocalView(false)
 			return
@@ -37,29 +25,20 @@ export default function ModalWrapper() {
 		// Use preloaded data instead of fetching
 		const data = allCountryData[countryCode]
 		if (data) {
-			console.log('Setting country data:', countryCode)
 			setCountryData(data)
 			setIsLocalView(isLocal)
 		} else {
-			console.log('Country data not found, redirecting to home')
 			// Country data not found, redirect to home
 			router.replace('/')
 		}
 	}, [countryCode, isLocal, router])
 
 	const onClickAway = () => {
-		console.log('ModalWrapper onClickAway - navigating to home')
 		router.push('/')
 	}
 
-	const modalCountryCode = countryData?.country?.toUpperCase()
+	const modalCountryCode = countryData?.country?.toLowerCase()
 	
-	console.log('ModalWrapper returning ModalContainer with:', {
-		modalCountryCode,
-		mediaCount: countryData?.media?.length || 0,
-		localCount: countryData?.local?.length || 0,
-		isLocalView
-	})
 
 	return (
 		<ModalContainer 
