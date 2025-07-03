@@ -5,7 +5,7 @@ import ModalContainer from "./Modal/ModalContainer"
 import MenuModalContainer from "./components/MenuModal/MenuModalContainer"
 import CountryListContent from "./components/MenuModal/CountryListContent"
 import RequestChangesContent from "./components/MenuModal/RequestChangesContent"
-import ContactUsContent from "./components/MenuModal/ContactUsContent"
+import AboutContent from "./components/MenuModal/AboutContent"
 import { allCountryData } from "./data.js"
 import { useModalTransition } from "./contexts/ModalTransitionContext"
 
@@ -84,8 +84,8 @@ export default function ModalWrapper() {
 					return 'Country List'
 				case 'request-changes':
 					return 'Request Changes'
-				case 'contact-us':
-					return 'Contact Us'
+				case 'about':
+					return 'About'
 				default:
 					return 'Menu'
 			}
@@ -97,8 +97,8 @@ export default function ModalWrapper() {
 					return <CountryListContent />
 				case 'request-changes':
 					return <RequestChangesContent />
-				case 'contact-us':
-					return <ContactUsContent />
+				case 'about':
+					return <AboutContent />
 				default:
 					return <div>Content not found</div>
 			}

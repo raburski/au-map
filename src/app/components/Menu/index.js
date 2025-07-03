@@ -24,8 +24,8 @@ export default function Menu() {
 			case 'request-changes':
 				startTransition('/menu/request-changes', router)
 				break
-			case 'contact-us':
-				startTransition('/menu/contact-us', router)
+			case 'about':
+				startTransition('/menu/about', router)
 				break
 			default:
 				break
@@ -85,13 +85,14 @@ export default function Menu() {
 				</button>
 				<button 
 					className={styles.menuItem}
-					onClick={() => handleMenuClick('contact-us')}
+					onClick={() => handleMenuClick('about')}
 				>
 					<svg className={styles.menuIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-						<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-						<polyline points="22,6 12,13 2,6"/>
+						<circle cx="12" cy="12" r="10"/>
+						<line x1="12" y1="16" x2="12" y2="10"/>
+						<line x1="12" y1="8" x2="12" y2="8"/>
 					</svg>
-					Contact Us
+					About
 				</button>
 			</div>
 		</div>
