@@ -1,52 +1,73 @@
 "use client"
 import { usePathname, useRouter } from "next/navigation"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useMemo } from "react"
 import ModalContainer from "./Modal/ModalContainer"
 import { allCountryData } from "./data.js"
+import { useModalTransition } from "./contexts/ModalTransitionContext"
 
 export default function ModalWrapper() {
 	const pathname = usePathname()
 	const router = useRouter()
-	const [countryData, setCountryData] = useState(null)
-	const [isLocalView, setIsLocalView] = useState(false)
+	const { isTransitioning, pendingRoute, endTransition, executePendingRoute } = useModalTransition()
 	
-	// Extract country code from pathname
-	const countryMatch = pathname.match(/^\/country\/([^\/]+)(?:\/local)?$/)
+	// Extract country code from pathname or pending route
+	const currentRoute = isTransitioning ? pendingRoute : pathname
+	const countryMatch = currentRoute?.match(/^\/country\/([^\/]+)(?:\/local)?$/)
 	const countryCode = countryMatch ? countryMatch[1].toLowerCase() : undefined
-	const isLocal = pathname.includes('/local')
+	const isLocal = currentRoute?.includes('/local')
 
+	// Memoize country data to prevent unnecessary re-renders
+	const countryData = useMemo(() => {
+		if (!countryCode) return null
+		return allCountryData[countryCode] || null
+	}, [countryCode])
+
+	// Handle route changes
 	useEffect(() => {
 		if (!countryCode) {
-			setCountryData(null)
-			setIsLocalView(false)
 			return
 		}
 
-		// Use preloaded data instead of fetching
-		const data = allCountryData[countryCode]
-		if (data) {
-			setCountryData(data)
-			setIsLocalView(isLocal)
-		} else {
-			// Country data not found, redirect to home
+		if (!countryData) {
 			router.replace('/')
+			return
 		}
-	}, [countryCode, isLocal, router])
+		
+		// Execute pending route after animation starts, then end transition
+		if (isTransitioning) {
+			const executeTimer = setTimeout(() => {
+				executePendingRoute()
+			}, 50) // Small delay to ensure modal animation has started
+			
+			const endTimer = setTimeout(() => {
+				endTransition()
+			}, 350) // Wait for animation to complete (300ms + buffer)
+			
+			return () => {
+				clearTimeout(executeTimer)
+				clearTimeout(endTimer)
+			}
+		}
+	}, [countryCode, countryData, isTransitioning, endTransition, executePendingRoute, router])
 
-	const onClickAway = () => {
+	const handleCloseModal = () => {
 		router.push('/')
 	}
 
 	const modalCountryCode = countryData?.country?.toLowerCase()
-	
+
+	// Don't render if no country code or no data
+	if (!countryCode || !countryData) {
+		return null
+	}
 
 	return (
 		<ModalContainer 
 			countryCode={modalCountryCode} 
-			media={countryData?.media || []} 
-			local={countryData?.local || []}
-			isLocalView={isLocalView}
-			onClickAway={onClickAway}
+			media={countryData.media || []} 
+			local={countryData.local || []}
+			isLocalView={isLocal}
+			onClickAway={handleCloseModal}
 		/>
 	)
 } 

@@ -10,14 +10,13 @@ export default function ModalContainer({ countryCode, media = [], local = [], is
 	const [currentView, setCurrentView] = useState(isLocalView ? 'local' : 'main')
 	const [isAnimating, setIsAnimating] = useState(false)
 	const [isModalVisible, setIsModalVisible] = useState(false)
-	const isNavigatingRef = useRef(false)
 	const hasInitialized = useRef(false)
 
 	// Handle modal opening animation
 	useEffect(() => {
 		if (countryCode && !hasInitialized.current) {
 			hasInitialized.current = true
-			// Use requestAnimationFrame to ensure the DOM is ready
+			// Start animation on next frame
 			requestAnimationFrame(() => {
 				setIsModalVisible(true)
 			})
@@ -27,13 +26,8 @@ export default function ModalContainer({ countryCode, media = [], local = [], is
 		}
 	}, [countryCode])
 
+	// Handle view changes
 	useEffect(() => {
-		// Don't trigger animation if we're already navigating
-		if (isNavigatingRef.current) {
-			return
-		}
-
-		// Sync internal state with URL changes
 		const newView = isLocalView ? 'local' : 'main'
 		if (newView !== currentView) {
 			setIsAnimating(true)
@@ -45,42 +39,17 @@ export default function ModalContainer({ countryCode, media = [], local = [], is
 	}, [isLocalView, currentView])
 
 	const handleNavigateToLocal = () => {
-		if (isAnimating) return // Prevent multiple clicks
-		
-		isNavigatingRef.current = true
-		setIsAnimating(true)
-		setTimeout(() => {
-			setCurrentView('local')
-			setIsAnimating(false)
-			// Update URL after animation
-			router.push(`/country/${countryCode.toLowerCase()}/local`)
-			// Reset navigation flag after a short delay
-			setTimeout(() => {
-				isNavigatingRef.current = false
-			}, 100)
-		}, 300)
+		if (isAnimating) return
+		router.push(`/country/${countryCode.toLowerCase()}/local`)
 	}
 
 	const handleNavigateBack = () => {
-		if (isAnimating) return // Prevent multiple clicks
-		
-		isNavigatingRef.current = true
-		setIsAnimating(true)
-		setTimeout(() => {
-			setCurrentView('main')
-			setIsAnimating(false)
-			// Update URL after animation
-			router.push(`/country/${countryCode.toLowerCase()}`)
-			// Reset navigation flag after a short delay
-			setTimeout(() => {
-				isNavigatingRef.current = false
-			}, 100)
-		}, 300)
+		if (isAnimating) return
+		router.push(`/country/${countryCode.toLowerCase()}`)
 	}
 
 	const handleCloseModal = () => {
 		setIsModalVisible(false)
-		// Wait for animation to complete before calling onClickAway
 		setTimeout(() => {
 			onClickAway()
 		}, 300)
