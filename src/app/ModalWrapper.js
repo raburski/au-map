@@ -2,6 +2,10 @@
 import { usePathname, useRouter } from "next/navigation"
 import { useState, useEffect, useMemo } from "react"
 import ModalContainer from "./Modal/ModalContainer"
+import MenuModalContainer from "./components/MenuModal/MenuModalContainer"
+import CountryListContent from "./components/MenuModal/CountryListContent"
+import RequestChangesContent from "./components/MenuModal/RequestChangesContent"
+import ContactUsContent from "./components/MenuModal/ContactUsContent"
 import { allCountryData } from "./data.js"
 import { useModalTransition } from "./contexts/ModalTransitionContext"
 
@@ -10,10 +14,13 @@ export default function ModalWrapper() {
 	const router = useRouter()
 	const { isTransitioning, pendingRoute, endTransition, executePendingRoute } = useModalTransition()
 	
-	// Extract country code from pathname or pending route
+	// Extract route info from pathname or pending route
 	const currentRoute = isTransitioning ? pendingRoute : pathname
 	const countryMatch = currentRoute?.match(/^\/country\/([^\/]+)(?:\/local)?$/)
+	const menuMatch = currentRoute?.match(/^\/menu\/([^\/]+)$/)
+	
 	const countryCode = countryMatch ? countryMatch[1].toLowerCase() : undefined
+	const menuType = menuMatch ? menuMatch[1] : undefined
 	const isLocal = currentRoute?.includes('/local')
 
 	// Memoize country data to prevent unnecessary re-renders
@@ -24,11 +31,11 @@ export default function ModalWrapper() {
 
 	// Handle route changes
 	useEffect(() => {
-		if (!countryCode) {
+		if (!countryCode && !menuType) {
 			return
 		}
 
-		if (!countryData) {
+		if (countryCode && !countryData) {
 			router.replace('/')
 			return
 		}
@@ -48,7 +55,7 @@ export default function ModalWrapper() {
 				clearTimeout(endTimer)
 			}
 		}
-	}, [countryCode, countryData, isTransitioning, endTransition, executePendingRoute, router])
+	}, [countryCode, countryData, menuType, isTransitioning, endTransition, executePendingRoute, router])
 
 	const handleCloseModal = () => {
 		router.push('/')
@@ -56,18 +63,58 @@ export default function ModalWrapper() {
 
 	const modalCountryCode = countryData?.country?.toLowerCase()
 
-	// Don't render if no country code or no data
-	if (!countryCode || !countryData) {
-		return null
+	// Handle country modal
+	if (countryCode && countryData) {
+		return (
+			<ModalContainer 
+				countryCode={modalCountryCode} 
+				media={countryData.media || []} 
+				local={countryData.local || []}
+				isLocalView={isLocal}
+				onClickAway={handleCloseModal}
+			/>
+		)
 	}
 
-	return (
-		<ModalContainer 
-			countryCode={modalCountryCode} 
-			media={countryData.media || []} 
-			local={countryData.local || []}
-			isLocalView={isLocal}
-			onClickAway={handleCloseModal}
-		/>
-	)
+	// Handle menu modal
+	if (menuType) {
+		const getModalTitle = () => {
+			switch (menuType) {
+				case 'country-list':
+					return 'Country List'
+				case 'request-changes':
+					return 'Request Changes'
+				case 'contact-us':
+					return 'Contact Us'
+				default:
+					return 'Menu'
+			}
+		}
+
+		const getModalContent = () => {
+			switch (menuType) {
+				case 'country-list':
+					return <CountryListContent />
+				case 'request-changes':
+					return <RequestChangesContent />
+				case 'contact-us':
+					return <ContactUsContent />
+				default:
+					return <div>Content not found</div>
+			}
+		}
+
+		return (
+			<MenuModalContainer 
+				title={getModalTitle()}
+				isVisible={true}
+				onClose={handleCloseModal}
+			>
+				{getModalContent()}
+			</MenuModalContainer>
+		)
+	}
+
+	// Don't render anything if no modal should be shown
+	return null
 } 

@@ -1,22 +1,10 @@
 "use client"
-import styles from "./page.module.css";
-import Map from "./Map";
-import { useRouter } from "next/navigation";
-import { useModalTransition } from "./contexts/ModalTransitionContext";
+import styles from "./page.module.css"
 
 export default function Home() {
-	const router = useRouter()
-	const { startTransition } = useModalTransition()
-	
-	const onCountryClick = (cc) => {
-		startTransition(`/country/${cc}`, router)
-	}
-
 	return (
 		<main className={styles.main}>
-			<div className={styles.mapContainer}>
-				<Map onCountryClick={onCountryClick} selectedCountryCode={undefined}/>
-			</div>
+			{/* Map is now in the background via MapBackground component */}
 		</main>
 	)
 }
