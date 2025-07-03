@@ -1,4 +1,3 @@
-"use client"
 import styles from "./aboutContent.module.css"
 
 export default function AboutContent() {

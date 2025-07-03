@@ -1,5 +1,5 @@
-import AboutContent from "../../../components/MenuModal/AboutContent"
-import MenuModalWrapper from "../../../components/MenuModalWrapper"
+import AboutContent from "./AboutContent"
+import StaticModal from "../../../components/StaticModal"
 
 export const metadata = {
 	title: "About | Architectural Uprising Map",
@@ -9,8 +9,8 @@ export const metadata = {
 
 export default function AboutPage() {
 	return (
-		<MenuModalWrapper title="About">
+		<StaticModal title="About">
 			<AboutContent />
-		</MenuModalWrapper>
+		</StaticModal>
 	)
 } 
