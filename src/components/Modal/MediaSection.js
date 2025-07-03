@@ -1,5 +1,5 @@
 import { FaDiscord, FaExternalLinkSquareAlt, FaFacebook, FaFacebookSquare, FaInstagram, FaTwitter } from "react-icons/fa"
-import { MEDIA_TYPE } from "../types"
+import { MEDIA_TYPE } from "@/app/types.js"
 import styles from "./modal-refactored.module.css"
 
 function getMediaTypeIcon(type) {

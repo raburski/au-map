@@ -1,7 +1,7 @@
 "use client"
 import { useRouter } from "next/navigation"
 import countryFlagEmoji from "country-flag-emoji"
-import { uprisingCountries } from "../../data.js"
+import { uprisingCountries } from "@/app/data.js"
 import styles from "./countryListContent.module.css"
 
 export default function CountryListContent() {

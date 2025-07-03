@@ -1,7 +1,16 @@
-"use client"
+import AboutContent from "../../../components/MenuModal/AboutContent"
+import MenuModalWrapper from "../../../components/MenuModalWrapper"
+
+export const metadata = {
+	title: "About | Architectural Uprising Map",
+	description: "Learn about the Architectural Uprising movement and this open-source interactive map project",
+	keywords: "architectural uprising, about, open source, community, architecture movement",
+}
 
 export default function AboutPage() {
-	// This page exists to prevent 404s
-	// The actual modal is handled by ModalWrapper
-	return null
+	return (
+		<MenuModalWrapper title="About">
+			<AboutContent />
+		</MenuModalWrapper>
+	)
 } 

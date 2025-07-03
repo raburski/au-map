@@ -1,7 +1,16 @@
-"use client"
+import RequestChangesContent from "../../../components/MenuModal/RequestChangesContent"
+import MenuModalWrapper from "../../../components/MenuModalWrapper"
+
+export const metadata = {
+	title: "Request Changes | Architectural Uprising Map",
+	description: "Learn how to contribute and update data for the Architectural Uprising map",
+	keywords: "contribute, request changes, architectural uprising, github, open source",
+}
 
 export default function RequestChangesPage() {
-	// This page exists to prevent 404s
-	// The actual modal is handled by ModalWrapper
-	return null
+	return (
+		<MenuModalWrapper title="Request Changes">
+			<RequestChangesContent />
+		</MenuModalWrapper>
+	)
 } 

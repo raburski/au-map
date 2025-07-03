@@ -1,5 +1,10 @@
-"use client"
 import styles from "./page.module.css"
+
+export const metadata = {
+	title: "Architectural Uprising Map",
+	description: "Interactive map showing architectural uprising movements around the world",
+	keywords: "architectural uprising, architecture, urban planning, activism",
+}
 
 export default function Home() {
 	return (

@@ -1,11 +1,10 @@
 "use client"
 import { useEffect, useRef, useState } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
-import { useModalTransition } from '../contexts/ModalTransitionContext'
 import MapSVG from '../Map/map.jsx'
 import countryFlagEmoji from "country-flag-emoji"
-import { MEDIA_TYPE, UPRISING_LEVEL } from '../types.js'
-import { uprisingCountries, allCountryData } from '../data.js'
+import { MEDIA_TYPE, UPRISING_LEVEL } from '@/app/types.js'
+import { uprisingCountries, allCountryData } from '@/app/data.js'
 import styles from './mapBackground.module.css'
 
 function getUprisingLevel(media) {
@@ -40,7 +39,6 @@ export default function MapBackground() {
     const selectedCountry = useRef()
     const router = useRouter()
     const pathname = usePathname()
-    const { startTransition } = useModalTransition()
 
 	// Use preloaded uprising countries data
 	const uprisingCountriesData = uprisingCountries.reduce((acc, code) => {
@@ -66,7 +64,7 @@ export default function MapBackground() {
     }).join('')
 
     const onCountryClick = (cc) => {
-        startTransition(`/country/${cc}`, router)
+        router.push(`/country/${cc}`)
     }
 
     useEffect(() => {

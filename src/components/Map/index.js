@@ -2,8 +2,8 @@
 import { useEffect, useRef, useState } from 'react'
 import MapSVG from './map.jsx'
 import countryFlagEmoji from "country-flag-emoji"
-import { MEDIA_TYPE, UPRISING_LEVEL } from '../types.js'
-import { uprisingCountries, allCountryData } from '../data.js'
+import { MEDIA_TYPE, UPRISING_LEVEL } from '@/app/types.js'
+import { uprisingCountries, allCountryData } from '@/app/data.js'
 
 function getUprisingLevel(media) {
     const fbGroup = media.find(m => m.type === MEDIA_TYPE.FB_GROUP)

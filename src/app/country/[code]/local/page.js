@@ -1,36 +1,26 @@
-"use client"
-import { useParams, useRouter } from "next/navigation"
-import { useEffect, useState } from "react"
-import { allCountryData } from "../../../data.js"
+import { uprisingCountries } from '../../../data.js'
 import styles from "../../../page.module.css"
-import Map from "../../../Map"
+
+export async function generateStaticParams() {
+	return uprisingCountries.map((code) => ({
+		code: code.toLowerCase(),
+	}))
+}
+
+export async function generateMetadata({ params }) {
+	const countryCode = params.code?.toLowerCase()
+	
+	return {
+		title: `Local Branches - ${countryCode?.toUpperCase()} | Architectural Uprising`,
+		description: `Local branches and communities of Architectural Uprising in ${countryCode?.toUpperCase()}`,
+		keywords: `architectural uprising, local branches, ${countryCode?.toUpperCase()}, communities`,
+	}
+}
 
 export default function LocalBranchesPage() {
-	const params = useParams()
-	const router = useRouter()
-	const countryCode = params.code
-	const [countryData, setCountryData] = useState(null)
-	const [country, setCountry] = useState(null)
-
-	useEffect(() => {
-		if (countryCode && allCountryData[countryCode]) {
-			setCountryData(allCountryData[countryCode])
-			// Get country info from flag emoji library
-			import("country-flag-emoji").then(({ default: countryFlagEmoji }) => {
-				setCountry(countryFlagEmoji.get(countryCode))
-			})
-		}
-	}, [countryCode])
-
-	const onCountryClick = cc => {
-		router.push(`/country/${cc}`)
-	}
-
 	return (
 		<main className={styles.main}>
-			<div className={styles.mapContainer}>
-				<Map onCountryClick={onCountryClick} selectedCountryCode={countryCode?.toUpperCase()}/>
-			</div>
+			{/* Map is now in the background via MapBackground component */}
 		</main>
 	)
 } 

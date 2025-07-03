@@ -1,14 +1,12 @@
 "use client"
 import { useState, useEffect, useRef } from "react"
 import { useRouter } from "next/navigation"
-import { useModalTransition } from "../../contexts/ModalTransitionContext"
 import styles from "./menu.module.css"
 
 export default function Menu() {
 	const [isOpen, setIsOpen] = useState(false)
 	const menuRef = useRef(null)
 	const router = useRouter()
-	const { startTransition } = useModalTransition()
 
 	const toggleMenu = () => {
 		setIsOpen(!isOpen)
@@ -16,16 +14,16 @@ export default function Menu() {
 
 	const handleMenuClick = (action) => {
 		setIsOpen(false)
-		// Handle different menu actions
+		// Handle different menu actions using proper Next.js navigation
 		switch (action) {
 			case 'country-list':
-				startTransition('/menu/country-list', router)
+				router.push('/menu/country-list')
 				break
 			case 'request-changes':
-				startTransition('/menu/request-changes', router)
+				router.push('/menu/request-changes')
 				break
 			case 'about':
-				startTransition('/menu/about', router)
+				router.push('/menu/about')
 				break
 			default:
 				break

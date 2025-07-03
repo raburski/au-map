@@ -1,9 +1,8 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { ModalTransitionProvider } from "./contexts/ModalTransitionContext";
-import ModalWrapper from "./ModalWrapper";
-import Menu from "./components/Menu";
-import MapBackground from "./MapBackground";
+import Menu from "../components/Menu";
+import MapBackground from "../components/MapBackground";
+import CountryModal from "../components/CountryModal";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,12 +15,10 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <link rel="icon" href="/favicon.ico" />
       <body className={inter.className}>
-        <ModalTransitionProvider>
-          <MapBackground />
-          <Menu />
-          {children}
-          <ModalWrapper />
-        </ModalTransitionProvider>
+        <MapBackground />
+        <Menu />
+        {children}
+        <CountryModal />
       </body>
     </html>
   );

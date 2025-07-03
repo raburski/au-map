@@ -59,6 +59,46 @@
 	position: relative;
 }
 
+/* Menu Modal Header */
+.modalHeader:has(.modalTitle) {
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding: 24px 24px 0 24px;
+	border-bottom: 1px solid #e5e7eb;
+}
+
+.modalTitle {
+	margin: 0 0 24px 0;
+	font-size: 24px;
+	font-weight: 600;
+	color: #111827;
+}
+
+.closeButton {
+	background: none;
+	border: none;
+	padding: 8px;
+	cursor: pointer;
+	border-radius: 6px;
+	color: #6b7280;
+	transition: all 0.2s ease;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: -22px;
+}
+
+.closeButton:hover {
+	background: #f3f4f6;
+	color: #374151;
+}
+
+.closeButton svg {
+	width: 20px;
+	height: 20px;
+}
+
 .modalEmblem {
 	position: absolute;
 	top: -72px;
@@ -88,6 +128,12 @@
 	flex: 1;
 	display: flex;
 	flex-direction: column;
+}
+
+/* Menu Modal Content */
+.modalContent:not(.viewContainer) {
+	padding: 24px;
+	overflow-y: auto;
 }
 
 .viewContainer {
