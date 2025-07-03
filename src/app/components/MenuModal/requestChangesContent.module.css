@@ -1,0 +1,120 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.section {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.section h3 {
+	margin: 0;
+	font-size: 18px;
+	font-weight: 600;
+	color: #1f2937;
+	border-bottom: 2px solid #e5e7eb;
+	padding-bottom: 8px;
+}
+
+.section p {
+	margin: 0;
+	color: #374151;
+	line-height: 1.6;
+	font-size: 14px;
+}
+
+.link {
+	color: #2563eb;
+	text-decoration: none;
+	font-weight: 500;
+	transition: color 0.2s ease;
+}
+
+.link:hover {
+	color: #1d4ed8;
+	text-decoration: underline;
+}
+
+.steps {
+	margin: 0;
+	padding-left: 20px;
+	color: #374151;
+	line-height: 1.6;
+	font-size: 14px;
+}
+
+.steps li {
+	margin-bottom: 8px;
+}
+
+.steps li:last-child {
+	margin-bottom: 0;
+}
+
+.steps strong {
+	color: #1f2937;
+	font-weight: 600;
+}
+
+.steps code {
+	background: #f3f4f6;
+	padding: 2px 6px;
+	border-radius: 4px;
+	font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+	font-size: 12px;
+	color: #dc2626;
+}
+
+.fileLink {
+	text-decoration: none;
+	transition: all 0.2s ease;
+}
+
+.fileLink:hover {
+	text-decoration: underline;
+}
+
+.fileLink code {
+	transition: all 0.2s ease;
+}
+
+.fileLink:hover code {
+	background: #e5e7eb;
+	color: #991b1b;
+}
+
+.note {
+	background: #fef3c7;
+	border: 1px solid #f59e0b;
+	border-radius: 6px;
+	padding: 12px;
+	color: #92400e;
+	font-style: italic;
+	margin: 0;
+}
+
+@media (max-width: 768px) {
+	.container {
+		gap: 20px;
+	}
+	
+	.section {
+		gap: 10px;
+	}
+	
+	.section h3 {
+		font-size: 16px;
+	}
+	
+	.section p,
+	.steps {
+		font-size: 13px;
+	}
+	
+	.steps {
+		padding-left: 16px;
+	}
+} 
