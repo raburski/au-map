@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react"
 import { useRouter } from "next/navigation"
 import ModalHeader from "./ModalHeader"
 import ModalContent from "./ModalContent"
+import { useModalTransition } from "./ModalTransitionContext"
 import styles from "./modal-refactored.module.css"
 
 export default function UnifiedModal({ 
@@ -24,6 +25,7 @@ export default function UnifiedModal({
 	isLocalView = false
 }) {
 	const router = useRouter()
+	const { navigateWithTransition } = useModalTransition()
 	const [currentView, setCurrentView] = useState(isLocalView ? 'local' : 'main')
 	const [isAnimating, setIsAnimating] = useState(false)
 	const [isModalVisible, setIsModalVisible] = useState(false)
@@ -59,12 +61,16 @@ export default function UnifiedModal({
 
 	const handleNavigateToLocal = () => {
 		if (isAnimating || type !== 'country') return
-		router.push(`/country/${countryCode.toLowerCase()}/local`)
+		navigateWithTransition(`/country/${countryCode.toLowerCase()}/local`, () => {
+			setIsAnimating(true)
+		})
 	}
 
 	const handleNavigateBack = () => {
 		if (isAnimating || type !== 'country') return
-		router.push(`/country/${countryCode.toLowerCase()}`)
+		navigateWithTransition(`/country/${countryCode.toLowerCase()}`, () => {
+			setIsAnimating(true)
+		})
 	}
 
 	const handleCloseModal = () => {

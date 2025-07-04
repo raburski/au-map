@@ -3,6 +3,7 @@ import "./globals.css";
 import Menu from "../components/Menu";
 import MapBackground from "../components/MapBackground";
 import CountryModal from "../components/CountryModal";
+import { ModalTransitionProvider } from "../components/Modal/ModalTransitionContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,10 +16,12 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <link rel="icon" href="/favicon.ico" />
       <body className={inter.className}>
-        <MapBackground />
-        <Menu />
-        {children}
-        <CountryModal />
+        <ModalTransitionProvider>
+          <MapBackground />
+          <Menu />
+          {children}
+          <CountryModal />
+        </ModalTransitionProvider>
       </body>
     </html>
   );
