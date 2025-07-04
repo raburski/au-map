@@ -49,7 +49,7 @@ export default function Menu() {
 			
 			<div className={`${styles.menuDropdown} ${isOpen ? styles.menuDropdownOpen : ''}`}>
 				<Link 
-					href="/menu/country-list"
+					href="/country-list"
 					className={styles.menuItem}
 				>
 					<svg className={styles.menuIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -60,7 +60,7 @@ export default function Menu() {
 					Country List
 				</Link>
 				<Link 
-					href="/menu/request-changes"
+					href="/request-changes"
 					className={styles.menuItem}
 				>
 					<svg className={styles.menuIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -70,7 +70,7 @@ export default function Menu() {
 					Request Changes
 				</Link>
 				<Link 
-					href="/menu/about"
+					href="/about"
 					className={styles.menuItem}
 				>
 					<svg className={styles.menuIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">

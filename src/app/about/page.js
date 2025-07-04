@@ -1,5 +1,5 @@
 import AboutContent from "./AboutContent"
-import StaticModal from "../../../components/StaticModal"
+import StaticModal from "@/components/StaticModal"
 
 export const metadata = {
 	title: "About | Architectural Uprising Map",

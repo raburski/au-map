@@ -1,5 +1,5 @@
-import RequestChangesContent from "../../../components/MenuModal/RequestChangesContent"
-import MenuModalWrapper from "../../../components/MenuModalWrapper"
+import RequestChangesContent from "./RequestChangesContent"
+import MenuModalWrapper from "@/components/MenuModalWrapper"
 
 export const metadata = {
 	title: "Request Changes | Architectural Uprising Map",

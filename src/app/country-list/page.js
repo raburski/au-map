@@ -1,5 +1,5 @@
-import CountryListContent from "../../../components/MenuModal/CountryListContent"
-import MenuModalWrapper from "../../../components/MenuModalWrapper"
+import CountryListContent from "./CountryListContent"
+import MenuModalWrapper from "@/components/MenuModalWrapper"
 
 export const metadata = {
 	title: "Country List | Architectural Uprising Map",
