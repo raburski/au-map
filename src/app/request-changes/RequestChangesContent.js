@@ -25,6 +25,16 @@ export default function RequestChangesContent() {
 				<p>If you want to update your country's data:</p>
 				<ol className={styles.steps}>
 					<li>
+						<strong>Check data format:</strong> reference to Polish <a 
+							href="https://github.com/raburski/au-map/blob/main/src/data/uprisings/pl.json" 
+							target="_blank" 
+							rel="noopener noreferrer"
+							className={styles.fileLink}
+						>
+							<code>pl.json</code>
+						</a> file to see how data should be structured
+					</li>
+					<li>
 						<strong>Find your country file:</strong> Look for a file named after your country code 
 						(e.g., <a 
 							href="https://github.com/raburski/au-map/blob/main/src/data/uprisings/pl.json" 
@@ -48,7 +58,7 @@ export default function RequestChangesContent() {
 							className={styles.link}
 						>
 							uprisings directory
-						</a>.
+						</a>
 					</li>
 					<li>
 						<strong>Edit the file:</strong> Click on the file and then click the pencil icon to edit it
