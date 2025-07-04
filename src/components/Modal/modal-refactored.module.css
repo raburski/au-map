@@ -133,6 +133,7 @@
 /* Menu Modal Content */
 .modalContent:not(.viewContainer) {
 	padding: 24px;
+	padding-top:0px;
 	overflow-y: auto;
 }
 
