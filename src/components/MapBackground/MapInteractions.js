@@ -19,7 +19,12 @@ export default function MapInteractions({ uprisingCountriesData }) {
 	// Prefetch country routes on hover
 	const onCountryHover = (cc) => {
 		router.prefetch(`/country/${cc}`)
-		router.prefetch(`/country/${cc}/local`)
+		
+		// Only prefetch local route if country has local branches
+		const countryData = uprisingCountriesData[cc.toUpperCase()]
+		if (countryData?.local && countryData.local.length > 0) {
+			router.prefetch(`/country/${cc}/local`)
+		}
 	}
 
 	useEffect(() => {
