@@ -1,6 +1,10 @@
 import { uprisingCountries } from '../../data.js'
 import styles from "../../page.module.css"
 
+// Force static generation - no server-side rendering
+export const dynamic = 'force-static'
+export const revalidate = false
+
 export async function generateStaticParams() {
 	return uprisingCountries.map((code) => ({
 		code: code.toLowerCase(),

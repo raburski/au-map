@@ -16,20 +16,29 @@ export default function MapInteractions({ uprisingCountriesData }) {
 		router.push(`/country/${cc}`)
 	}
 
+	// Prefetch country routes on hover
+	const onCountryHover = (cc) => {
+		router.prefetch(`/country/${cc}`)
+		router.prefetch(`/country/${cc}/local`)
+	}
+
 	useEffect(() => {
-		listeners.current.forEach(({ cc, listener }) => {
+		listeners.current.forEach(({ cc, listener, hoverListener }) => {
 			const element = document.querySelector(`#worldmap #${cc.toLowerCase()}`)
 			if (element) {
 				element.removeEventListener('click', listener)
+				element.removeEventListener('mouseenter', hoverListener)
 			}
 		})
 		listeners.current = Object.keys(uprisingCountriesData).map(cc => {
 			const selector = `#worldmap #${cc.toLowerCase()}`
 			const onClick = () => onCountryClick(cc.toLowerCase())
+			const onMouseEnter = () => onCountryHover(cc.toLowerCase())
 			const element = document.querySelector(selector)
 			if (element) {
 				element.addEventListener('click', onClick)
-				return { cc, listener: onClick }
+				element.addEventListener('mouseenter', onMouseEnter)
+				return { cc, listener: onClick, hoverListener: onMouseEnter }
 			} else {
 				return null
 			}
