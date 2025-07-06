@@ -35,6 +35,7 @@ export default function UnifiedModal({
 	useEffect(() => {
 		if (isVisible && !hasInitialized.current) {
 			hasInitialized.current = true
+			console.time('modal-open')
 			// Start animation on next frame
 			requestAnimationFrame(() => {
 				setIsModalVisible(true)
@@ -44,6 +45,13 @@ export default function UnifiedModal({
 			setIsModalVisible(false)
 		}
 	}, [isVisible])
+
+	// Handle modal visibility animation completion
+	useEffect(() => {
+		if (isModalVisible) {
+			console.timeEnd('modal-open')
+		}
+	}, [isModalVisible])
 
 	// Handle country modal view changes
 	useEffect(() => {

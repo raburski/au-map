@@ -4,6 +4,7 @@ import Menu from "../components/Menu";
 import MapBackground from "../components/MapBackground";
 import CountryModal from "../components/CountryModal";
 import { ModalTransitionProvider } from "../components/Modal/ModalTransitionContext";
+import ImagePreloader from "../components/ImagePreloader";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,6 +18,7 @@ export default function RootLayout({ children }) {
       <link rel="icon" href="/favicon.ico" />
       <body className={inter.className}>
         <ModalTransitionProvider>
+          <ImagePreloader />
           <MapBackground />
           <Menu />
           {children}
