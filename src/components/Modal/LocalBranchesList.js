@@ -43,33 +43,33 @@ function getMediaTypeLabel(type) {
 
 function LocalBranch({ branch, countryCode }) {
 	return (
-		<div className={styles.localBranch}>
-			<div className={styles.branchHeader}>
+		<div className={styles.localBranchCard}>
+			<div className={styles.branchCardHeader}>
 				<Image 
 					src={`/emblems/${countryCode}/${branch.cityCode}.jpg`} 
 					alt={`${branch.city} emblem`} 
-					width={48} 
-					height={48} 
-					className={styles.cityEmblem}
+					width={64} 
+					height={64} 
+					className={styles.cityEmblemSmall}
 					unoptimized
 				/>
 				<span className={styles.cityName}>{branch.city}</span>
 			</div>
-			<div className={styles.localMediaSection}>
+			<div className={styles.branchCardMedia}>
 				{branch.media.map((media, index) => (
 					<a 
 						key={index} 
 						href={media.url} 
 						target="_blank" 
-						className={styles.localMediaBox}
+						className={styles.branchMediaLink}
 						title={media.title}
 					>
-						<div className={styles.localMediaIcon}>
+						<div className={styles.branchMediaIcon}>
 							{getMediaTypeIcon(media.type)}
 						</div>
-						<div className={styles.localMediaContent}>
-							<div className={styles.localMediaLink}>{media.title}</div>
-							<div className={styles.localMediaSubtitle}>{getMediaTypeLabel(media.type)}</div>
+						<div className={styles.branchMediaContent}>
+							<div className={styles.branchMediaTitle}>{media.title}</div>
+							<div className={styles.branchMediaType}>{getMediaTypeLabel(media.type)}</div>
 						</div>
 					</a>
 				))}
@@ -80,7 +80,7 @@ function LocalBranch({ branch, countryCode }) {
 
 export default function LocalBranchesList({ local, countryCode }) {
 	return (
-		<div className={styles.localBranchesList}>
+		<div className={styles.localBranchesGrid}>
 			{local.map((branch, index) => (
 				<LocalBranch key={`${branch.cityCode}-${index}`} branch={branch} countryCode={countryCode} />
 			))}
