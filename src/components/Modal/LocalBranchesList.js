@@ -41,12 +41,12 @@ function getMediaTypeLabel(type) {
 	}
 }
 
-function LocalBranch({ branch }) {
+function LocalBranch({ branch, countryCode }) {
 	return (
 		<div className={styles.localBranch}>
 			<div className={styles.branchHeader}>
 				<Image 
-					src={`/emblems/${branch.cityCode}.jpeg`} 
+					src={`/emblems/${countryCode}/${branch.cityCode}.jpg`} 
 					alt={`${branch.city} emblem`} 
 					width={48} 
 					height={48} 
@@ -78,11 +78,11 @@ function LocalBranch({ branch }) {
 	)
 }
 
-export default function LocalBranchesList({ local }) {
+export default function LocalBranchesList({ local, countryCode }) {
 	return (
 		<div className={styles.localBranchesList}>
 			{local.map((branch, index) => (
-				<LocalBranch key={`${branch.cityCode}-${index}`} branch={branch} />
+				<LocalBranch key={`${branch.cityCode}-${index}`} branch={branch} countryCode={countryCode} />
 			))}
 		</div>
 	)

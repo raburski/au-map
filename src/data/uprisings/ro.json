@@ -2,9 +2,87 @@
     "country": "ro",
     "media": [
         {
-            "title": "revolta.arhitecturalaro",
+            "title": "Filiala Națională – Constantin Emanuel Zota",
             "type": "instagram",
             "url": "https://www.instagram.com/revolta.arhitecturalaro/"
+        },
+        {
+            "title": "Filiala Națională – Constantin Emanuel Zota",
+            "type": "fb_page",
+            "url": "https://www.facebook.com/profile.php?id=61572955058635"
+        },
+        {
+            "title": "Revolta Arhitecturală România",
+            "type": "website",
+            "url": "https://revoltaarhitecturala.org/"
+        }
+    ],
+    "local": [
+        {
+            "city": "Banat",
+            "cityCode": "banat",
+            "media": [
+                {
+                    "title": "Filiala Banat – Rareș Remețan",
+                    "type": "instagram",
+                    "url": "https://www.instagram.com/revoltaarhitecturala_banat/"
+                }
+            ]
+        },
+        {
+            "city": "Crișana",
+            "cityCode": "crisana",
+            "media": [
+                {
+                    "title": "Filiala Crișana – Rareș Remețan",
+                    "type": "instagram",
+                    "url": "https://www.instagram.com/revoltaarhitecturala_crisana/"
+                }
+            ]
+        },
+        {
+            "city": "Muntenia",
+            "cityCode": "muntenia",
+            "media": [
+                {
+                    "title": "Filiala Muntenia – Rareș Măglan",
+                    "type": "instagram",
+                    "url": "https://www.instagram.com/revoltaarhitecturala_muntenia/"
+                }
+            ]
+        },
+        {
+            "city": "București",
+            "cityCode": "bucuresti",
+            "media": [
+                {
+                    "title": "Filiala București – Luca Cavallioti",
+                    "type": "instagram",
+                    "url": "https://www.instagram.com/revoltaarhitecturala_bucuresti/"
+                }
+            ]
+        },
+        {
+            "city": "Dobrogea",
+            "cityCode": "dobrogea",
+            "media": [
+                {
+                    "title": "Filiala Dobrogea – Mihai Munteanu",
+                    "type": "instagram",
+                    "url": "https://www.instagram.com/revoltaarhitecturala_dobrogea/"
+                }
+            ]
+        },
+        {
+            "city": "Moldova",
+            "cityCode": "moldova",
+            "media": [
+                {
+                    "title": "Filiala Moldova – Mario Botez",
+                    "type": "instagram",
+                    "url": "https://www.instagram.com/revolta.arhimoldova/"
+                }
+            ]
         }
     ]
 }

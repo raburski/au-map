@@ -8,7 +8,7 @@ export default function ModalHeader({ countryCode }) {
 	return (
 		<div className={styles.modalHeader}>
 			<Image 
-				src={`/emblems/${countryCode}.jpeg`} 
+				src={`/emblems/${countryCode}.jpg`} 
 				alt={`AU ${country.name} emblem`} 
 				width={144} 
 				height={144} 

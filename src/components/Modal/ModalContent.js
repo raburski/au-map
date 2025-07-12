@@ -3,7 +3,7 @@ import MainView from "./MainView"
 import LocalView from "./LocalView"
 import styles from "./modal-refactored.module.css"
 
-export default function ModalContent({ currentView, isAnimating, media, local, onNavigateToLocal, onNavigateBack }) {
+export default function ModalContent({ currentView, isAnimating, media, local, onNavigateToLocal, onNavigateBack, countryCode }) {
 	const viewContainerRef = useRef(null)
 	const mainViewRef = useRef(null)
 	const localViewRef = useRef(null)
@@ -34,12 +34,14 @@ export default function ModalContent({ currentView, isAnimating, media, local, o
 					media={media} 
 					local={local} 
 					onNavigateToLocal={onNavigateToLocal}
+					countryCode={countryCode}
 					className={`${styles.mainView} ${currentView === 'main' ? styles.mainViewActive : ''}`}
 				/>
 				<LocalView 
 					ref={localViewRef}
 					local={local} 
 					onNavigateBack={onNavigateBack}
+					countryCode={countryCode}
 					className={`${styles.localView} ${currentView === 'local' ? styles.localViewActive : ''}`}
 				/>
 			</div>

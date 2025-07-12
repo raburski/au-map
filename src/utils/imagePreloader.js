@@ -13,7 +13,7 @@ export const preloadCountryEmblems = async (allCountryData) => {
 	const countryCodes = Object.keys(allCountryData)
 	
 	const emblemPromises = countryCodes.map(code => 
-		preloadImage(`/emblems/${code}.jpeg`)
+		preloadImage(`/emblems/${code}.jpg`)
 	)
 	
 	try {
@@ -42,13 +42,16 @@ export const preloadModalImages = async (allCountryData) => {
 	
 	// Add country emblems
 	Object.keys(allCountryData).forEach(code => {
-		imageUrls.push(`/emblems/${code}.jpeg`)
+		imageUrls.push(`/emblems/${code}.jpg`)
 	})
 	
-	// Add any other images from country data if needed
-	Object.values(allCountryData).forEach(country => {
-		// Add any other image URLs from country data here if they exist
-		// For example, if there are additional images in media or local branches
+	// Add local branch emblems
+	Object.entries(allCountryData).forEach(([countryCode, country]) => {
+		if (country.local && country.local.length > 0) {
+			country.local.forEach(branch => {
+				imageUrls.push(`/emblems/${countryCode}/${branch.cityCode}.jpg`)
+			})
+		}
 	})
 	
 	await preloadImages(imageUrls)
